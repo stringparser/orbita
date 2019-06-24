@@ -13,6 +13,7 @@
     "ipfs": "^0.36.4",
     "next": "^8.1.0",
     "orbit-db": "^0.21.3",
+    "orbit-db-identity-provider": "^0.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

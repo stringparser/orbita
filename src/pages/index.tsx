@@ -36,10 +36,16 @@ class Index extends Component {
     });
 
     ipfs.on('ready', async () => {
+      const address = require('../config/address.json').value;
       const orbitdb = await OrbitDB.createInstance(ipfs);
+      const options = {
+        accessController: {
+          write: ['*']
+        }
+      }
 
       // Create / Open a database
-      const db = this.db = await orbitdb.docs('orbit.test');
+      const db = window.__db = this.db = await orbitdb.docs('orbit.test', options);
       await db.load();
 
       // Listen for updates from peers
